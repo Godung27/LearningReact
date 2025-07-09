@@ -27,6 +27,9 @@ function App() {
           <menu>
             <TabButton>Components</TabButton>
             {/* <TabButton label="Components" /> */}
+            <TabButton>{CORE_CONCEPTS[1].title}</TabButton>
+            <TabButton>{CORE_CONCEPTS[2].title}</TabButton>
+            <TabButton>{CORE_CONCEPTS[3].title}</TabButton>
           </menu>
         </section>
       </main>
