@@ -4,8 +4,9 @@ import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  const handleSelect = function () {
-    console.log("Hello World! - Select");
+  const handleSelect = function (selectedButton) {
+    // selectedButton => "Components", "JSX", "Props", State
+    console.log(selectedButton);
   }
 
   return (
@@ -29,11 +30,19 @@ function App() {
         <section id="examples">
           <h2>Example</h2>
           <menu>
-            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={() => handleSelect("Components")}>
+              Components
+            </TabButton>
             {/* <TabButton label="Components" /> */}
-            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[1].title}</TabButton>
-            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[2].title}</TabButton>
-            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[3].title}</TabButton>
+            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[1].title)}>
+              {CORE_CONCEPTS[1].title}
+            </TabButton>
+            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[2].title)}>
+              {CORE_CONCEPTS[2].title}
+            </TabButton>
+            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[3].title)}>
+              {CORE_CONCEPTS[3].title}
+            </TabButton>
           </menu>
         </section>
       </main>
