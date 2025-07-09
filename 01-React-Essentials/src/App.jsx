@@ -4,6 +4,10 @@ import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const handleSelect = function () {
+    console.log("Hello World! - Select");
+  }
+
   return (
     <div>
       <Header /> {/*same but the end of code as "img" must have /> */}
@@ -25,11 +29,11 @@ function App() {
         <section id="examples">
           <h2>Example</h2>
           <menu>
-            <TabButton>Components</TabButton>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
             {/* <TabButton label="Components" /> */}
-            <TabButton>{CORE_CONCEPTS[1].title}</TabButton>
-            <TabButton>{CORE_CONCEPTS[2].title}</TabButton>
-            <TabButton>{CORE_CONCEPTS[3].title}</TabButton>
+            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[1].title}</TabButton>
+            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[2].title}</TabButton>
+            <TabButton onSelect={handleSelect}>{CORE_CONCEPTS[3].title}</TabButton>
           </menu>
         </section>
       </main>
