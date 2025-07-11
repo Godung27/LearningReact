@@ -47,17 +47,29 @@ function App() {
         <section id="examples">
           <h2>Example</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("Components")}>
+            <TabButton
+              isSelect={selectedTopic === "Components"}
+              onSelect={() => handleSelect("Components")}
+            >
               Components
             </TabButton>
             {/* <TabButton label="Components" /> */}
-            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[1].title)}>
+            <TabButton
+              isSelect={selectedTopic === CORE_CONCEPTS[1].title}
+              onSelect={() => handleSelect(CORE_CONCEPTS[1].title)}
+            >
               {CORE_CONCEPTS[1].title}
             </TabButton>
-            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[2].title)}>
+            <TabButton
+              isSelect={selectedTopic === CORE_CONCEPTS[2].title}
+              onSelect={() => handleSelect(CORE_CONCEPTS[2].title)}
+            >
               {CORE_CONCEPTS[2].title}
             </TabButton>
-            <TabButton onSelect={() => handleSelect(CORE_CONCEPTS[3].title)}>
+            <TabButton
+              isSelect={selectedTopic === CORE_CONCEPTS[3].title}
+              onSelect={() => handleSelect(CORE_CONCEPTS[3].title)}
+            >
               {CORE_CONCEPTS[3].title}
             </TabButton>
           </menu>
