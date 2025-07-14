@@ -3,6 +3,8 @@ import { useState } from "react";
 import { CORE_CONCEPTS } from "../data";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
+import Section from "./Section";
+import Tabs from "./Tabs";
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -25,18 +27,35 @@ export default function Examples() {
   }
 
   return (
-    <section id="examples">
+    <Section id="examples">
       <h2>Example</h2>
-      <menu>
-        {CORE_CONCEPTS.map((coreConceptClick) =>
+      <Tabs buttons={
+        <>
+          {
+            CORE_CONCEPTS.map((coreConceptClick) =>
+              <TabButton
+                key={coreConceptClick.title}
+                isSelect={selectedTopic === { ...coreConceptClick }.title}
+                onClick={() => handleSelect({ ...coreConceptClick }.title)}
+              >
+                {{ ...coreConceptClick }.title}
+              </TabButton>
+            )
+          }
+        </>
+      }>
+
+        {/* {CORE_CONCEPTS.map((coreConceptClick) =>
           <TabButton key={coreConceptClick.title}
             isSelect={selectedTopic === { ...coreConceptClick }.title}
-            onSelect={() => handleSelect({ ...coreConceptClick }.title)}
+            onClick={() => handleSelect({ ...coreConceptClick }.title)}
           >
             {{ ...coreConceptClick }.title}
           </TabButton>
-        )}
+        )} */}
+
         {/* <TabButton label="Components" /> */}
+
         {/* <TabButton
               isSelect={selectedTopic === "Components"}
               onSelect={() => handleSelect("Components")}
@@ -61,8 +80,8 @@ export default function Examples() {
             >
               {CORE_CONCEPTS[3].title}
             </TabButton> */}
-      </menu>
-      {tabContent}
+        {tabContent}
+      </Tabs >
 
       {/* {!selectedTopic && <p>Please select a topic.</p>}
           {
@@ -86,6 +105,6 @@ export default function Examples() {
                 </pre>
               </div>
           } */}
-    </section>
+    </Section >
   );
 }
