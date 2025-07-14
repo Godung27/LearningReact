@@ -29,21 +29,23 @@ export default function Examples() {
   return (
     <Section id="examples">
       <h2>Example</h2>
-      <Tabs buttons={
-        <>
-          {
-            CORE_CONCEPTS.map((coreConceptClick) =>
-              <TabButton
-                key={coreConceptClick.title}
-                isSelect={selectedTopic === { ...coreConceptClick }.title}
-                onClick={() => handleSelect({ ...coreConceptClick }.title)}
-              >
-                {{ ...coreConceptClick }.title}
-              </TabButton>
-            )
-          }
-        </>
-      }>
+      <Tabs
+        ButtonsContainer="menu"
+        buttons={
+          <>
+            {
+              CORE_CONCEPTS.map((coreConceptClick) =>
+                <TabButton
+                  key={coreConceptClick.title}
+                  isSelect={selectedTopic === { ...coreConceptClick }.title}
+                  onClick={() => handleSelect({ ...coreConceptClick }.title)}
+                >
+                  {{ ...coreConceptClick }.title}
+                </TabButton>
+              )
+            }
+          </>
+        }>
 
         {/* {CORE_CONCEPTS.map((coreConceptClick) =>
           <TabButton key={coreConceptClick.title}
