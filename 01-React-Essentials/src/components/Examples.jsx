@@ -83,7 +83,7 @@ export default function Examples() {
               {CORE_CONCEPTS[3].title}
             </TabButton> */}
         {tabContent}
-      </Tabs >
+      </Tabs>
 
       {/* {!selectedTopic && <p>Please select a topic.</p>}
           {
@@ -107,6 +107,6 @@ export default function Examples() {
                 </pre>
               </div>
           } */}
-    </Section >
+    </Section>
   );
 }
