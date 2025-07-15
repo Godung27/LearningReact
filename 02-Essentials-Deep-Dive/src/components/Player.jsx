@@ -11,7 +11,7 @@ export default function Player({ name, symbol }) {
     <li>
       <span className="player">
         {!isEditing && <span className="player-name">{name}</span>}
-        {isEditing && <input type="text" required />}
+        {isEditing && <input type="text" required value={name} />}
         <span className="player-symbol">{symbol}</span>
       </span>
       <button onClick={handleEditClick}>{!isEditing ? "Edit" : "Save"}</button>
