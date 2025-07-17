@@ -51,7 +51,7 @@ function App() {
     const thirdSquareSymbol = gameBoard[combinations[2].row][combinations[2].column];
 
     if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol) {
-      winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
     }
   }
 
@@ -73,9 +73,9 @@ function App() {
   }
 
   const handlePlayerNameChange = function (symbol, newName) {
-    setPlayers(prePlayer => {
+    setPlayers(prePlayers => {
       return {
-        ...prePlayer,
+        ...prePlayers,
         [symbol]: newName
       };
     });
@@ -89,11 +89,13 @@ function App() {
             defaultName="Player 1"
             symbol="X"
             isActive={activePlayer === "X"}
+            onChangeName={handlePlayerNameChange}
           />
           <Player
             defaultName="Player 2"
             symbol="O"
             isActive={activePlayer === "O"}
+            onChangeName={handlePlayerNameChange}
           />
         </ol>
         {
