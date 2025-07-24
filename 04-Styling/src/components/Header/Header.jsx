@@ -1,63 +1,65 @@
-import { styled } from "styled-components";
-
-import logo from "../../assets/logo.png"
+// import { styled } from "styled-components";
 // import classes from "./Header.module.css"
 
-const StyledHeader = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+import logo from "../../assets/logo.png"
 
-  & img {
-    object-fit: contain;
-    margin-bottom: 2rem;
-    width: 11rem;
-    height: 11rem;
-  }
+// const StyledHeader = styled.header`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin-top: 2rem;
+//   margin-bottom: 2rem;
 
-  & h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.4em;
-    text-align: center;
-    text-transform: uppercase;
-    color: #9a3412;
-    font-family: 'Pacifico', cursive;
-    margin: 0;
-  }
+//   & img {
+//     object-fit: contain;
+//     margin-bottom: 2rem;
+//     width: 11rem;
+//     height: 11rem;
+//   }
 
-  & p {
-    text-align: center;
-    color: #a39191;
-    margin: 0;
-  }
+//   & h1 {
+//     font-size: 1.5rem;
+//     font-weight: 600;
+//     letter-spacing: 0.4em;
+//     text-align: center;
+//     text-transform: uppercase;
+//     color: #9a3412;
+//     font-family: 'Pacifico', cursive;
+//     margin: 0;
+//   }
 
-  @media (min-width: 768px) {
+//   & p {
+//     text-align: center;
+//     color: #a39191;
+//     margin: 0;
+//   }
 
-    margin-bottom: 4rem;
+//   @media (min-width: 768px) {
 
-    & h1 {
-      font-size: 2.25rem;
-    }
-  }
-`
+//     margin-bottom: 4rem;
+
+//     & h1 {
+//       font-size: 2.25rem;
+//     }
+//   }
+// `
 
 export default function Header() {
   return (
-    <StyledHeader>
-      <img src={logo} alt="A canvas" />
-      <h1>ReactArt</h1>
+    // <StyledHeader>
+    <header className="flex flex-col items-center mt-8 mb-16">
+      <img src={logo} alt="A canvas" className="object-contain mb-8 w-44 h-44" />
+      <h1 className="text-4xl font-semibold tracking-widest text-center uppercase text-amber-800">ReactArt</h1>
       <p>A community of artists and art-lovers.</p>
-      {/* <p className={1 === 1 ? `${classes.paragraph}` : undefined}
-      // style={{
-      //   color: "green",
-      //   // "margin- left": 100, // same
-      //   marginLeft: 100,
-      // }}
-      > A community of artists and art-lovers.</p> */}
-    </StyledHeader>
+    </header>
+    // <p className={1 === 1 ? `${classes.paragraph}` : undefined}
+    // style={{
+    //   color: "green",
+    //   // "margin- left": 100, // same
+    //   marginLeft: 100,
+    // }}
+    // > A community of artists and art-lovers.</p> 
+    // </StyledHeader>
   );
 }
