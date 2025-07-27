@@ -35,7 +35,7 @@ export default function Input({ label, checkInvalid, ...props }) {
   let inputClass = "w-full px-3 py-2 leading-tight border rounded shadow";
 
   if (checkInvalid) {
-    labelClass += "text-red-400"
+    labelClass += " text-red-400"
     inputClass += " text-red-500 bg-red-100 border-red-300"
   } else {
     labelClass += " text-stone-300"
