@@ -1,6 +1,18 @@
+import { useImperativeHandle, useRef } from "react"
+
 export default function ResultModal({ ref, result, targetTime }) {
+  const dialogInside = useRef();
+
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialogInside.current.showModal();
+      }
+    };
+  });
+
   return (
-    <dialog className="result-modal" ref={ref}>
+    <dialog className="result-modal" ref={dialogInside}>
       <h2>You {result}</h2>
       <p>The target time was <strong>{targetTime} seconds.</strong></p>
       <p>You stopped the time with <strong>... seconds left.</strong></p>
