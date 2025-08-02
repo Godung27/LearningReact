@@ -1,8 +1,8 @@
-import Sidebar from "./components/Sidebar.jsx";
+import Sidebar from "./components/Sidebar/Sidebar.jsx";
 
 function App() {
   return (
-    <main>
+    <main className="h-screen my-8">
       <Sidebar />
     </main>
   );

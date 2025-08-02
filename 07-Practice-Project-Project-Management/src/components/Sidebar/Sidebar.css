@@ -1,0 +1,18 @@
+
+.sidebar-aside {
+  width: 33.333333%;
+  padding-left: 2rem; 
+  padding-right: 2rem;
+  padding-top: 4rem; 
+  padding-bottom: 4rem;
+  background-color: #1c1917;
+  color: #fafaf9; 
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar-aside {
+    width: 18rem;
+  }
+}
