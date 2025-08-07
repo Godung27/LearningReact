@@ -68,7 +68,9 @@ function App() {
   }
 
   return (
-    <CartContext.Provider>
+    // New React version <CartContext></CartContext>
+    // Old React version
+    <CartContext.Provider value={{ items: [] }}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
