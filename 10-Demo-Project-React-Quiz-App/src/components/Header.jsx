@@ -2,7 +2,7 @@ import quizLogoImg from "../assets/quiz-logo.png"
 
 export default function Header() {
   return (
-    <header className="header">
+    <header>
       <img src={quizLogoImg} alt="Quiz logo" />
       <h1>ReactQuiz</h1>
     </header>
