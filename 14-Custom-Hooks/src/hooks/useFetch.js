@@ -1,20 +1,25 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const useFetch = function () {
+export function useFetch(fetchFn, initialValue) {
+  const [isFetching, setIsFetching] = useState();
+  const [fetchedData, setFetchedData] = useState(initialValue);
+  const [error, setError] = useState();
+
   useEffect(() => {
-    async function fetchPlaces() {
+    async function fetchData() {
       setIsFetching(true);
       try {
-        const places = await fetchUserPlaces();
-        setUserPlaces(places);
+        const data = await fetchFn();
+        setFetchedData(data);
       } catch (error) {
-        setError({ message: error.message || 'Failed to fetch user places.' });
+        setError({ message: error.message || 'Failed to fetch data.' });
       }
 
       setIsFetching(false);
     }
 
-    fetchPlaces();
-  }, []);
+    fetchData();
+  }, [fetchFn]);
 
+  return { isFetching, fetchedData, error, }
 }
