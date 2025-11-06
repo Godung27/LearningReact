@@ -8,7 +8,12 @@ export default function StateLogin() {
     password: "",
   });
 
-  const emailIsInvalid = enteredValues.email !== "" && !enteredValues.email.includes("@");
+  const [didEdit, setDidEdit] = useState({
+    email: false,
+    password: false,
+  });
+
+  const emailIsInvalid = didEdit.email && !enteredValues.email.includes("@");
 
   const handleSubmit = function (e) {
     e.preventDefault();
@@ -20,6 +25,18 @@ export default function StateLogin() {
     setEnteredValues(preValues => ({
       ...preValues,
       [identifier]: value,
+    }));
+
+    setDidEdit(preEdit => ({
+      ...preEdit,
+      [identifier]: false,
+    }));
+  }
+
+  const handleInputBlur = function (identifier) {
+    setDidEdit(preEdit => ({
+      ...preEdit,
+      [identifier]: true,
     }));
   }
 
@@ -38,7 +55,14 @@ export default function StateLogin() {
       <div className="control-row">
         <div className="control no-margin">
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" onChange={(e) => handleInputChange("email", e.target.value)} value={enteredValues.email} />
+          <input
+            id="email"
+            type="email"
+            name="email"
+            onBlur={() => handleInputBlur("email")}
+            onChange={(e) => handleInputChange("email", e.target.value)}
+            value={enteredValues.email}
+          />
           <div className="control-error">
             {emailIsInvalid && <p>Please enter a valid email address.</p>}
           </div>
