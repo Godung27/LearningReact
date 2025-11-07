@@ -16,6 +16,8 @@ export default function Signup() {
       return;
     }
 
+    setPasswordsAreNotEqual(false);
+
     console.log(data);
   }
 
