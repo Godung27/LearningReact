@@ -5,9 +5,12 @@ export default function Modal({ open, className = "", children }) {
   const dialog = useRef();
 
   useEffect(() => {
+    const modal = dialog.current;
     if (open) {
-      dialog.current.showModal();
+      modal.showModal();
     }
+
+    return () => modal.close();
   }, [open]);
 
   return (
@@ -19,6 +22,6 @@ export default function Modal({ open, className = "", children }) {
         {children}
       </dialog>,
       document.getElementById("modal")
-    );
+    )
   );
 }
