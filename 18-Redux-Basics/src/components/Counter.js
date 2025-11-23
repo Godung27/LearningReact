@@ -2,7 +2,7 @@
 // import { connect } from 'react-redux';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { counterActions } from '../store/index.js';
+import { counterActions } from '../store/counterSlice.js';
 // import { INCREMENT } from "../store/index.js"
 import classes from './Counter.module.css';
 
