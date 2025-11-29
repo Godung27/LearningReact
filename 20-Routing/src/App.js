@@ -5,6 +5,7 @@ import Home from "./pages/Home.js";
 import Products from "./pages/Products.js";
 import Root from "./pages/Root.js";
 import ErrorPage from "./pages/ErrorPage.js";
+import ProductDetail from "./pages/ProductDetail.js";
 
 // Old Version
 // const routeDefinitions = createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     children: [
       { path: '/', element: <Home /> },
       { path: '/products', element: <Products /> },
+      { path: "/products/:idProduct", element: <ProductDetail /> },
     ],
   }
 ]);
