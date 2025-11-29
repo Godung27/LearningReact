@@ -11,9 +11,9 @@ export default function Products() {
     <>
       <h1>My Products Page</h1>
       <ul>
-        {PRODUCTS.map((prod) => (
-          <li key={prod.id}>
-            <Link to={`/products/${prod.id}`}>{prod.title}</Link>
+        {PRODUCTS.map((prop) => (
+          <li key={prop.id}>
+            <Link to={prop.id}>{prop.title}</Link>
           </li>
         ))}
       </ul>
